@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.13
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecurityUtil", "SecurityUtil\SecurityUtil.csproj", "{5168D07A-58B6-4A4C-9DBD-2FA1F5985DDC}"
 EndProject
@@ -64,5 +64,8 @@ Global
 		{5314A903-4CB1-4BA6-A5E5-96468714B718} = {B4A43300-E4D6-4B03-B9E3-148BEBC181FC}
 		{F507FEC6-12C1-4989-BD9C-6EF4F70CCE8D} = {3F1373E5-9CF5-41B5-B2AD-4DA5B7039FF4}
 		{6796E875-EE72-429A-95E2-3A2DD0A6BF08} = {3F1373E5-9CF5-41B5-B2AD-4DA5B7039FF4}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9B639FC9-D08E-4AFF-AB52-62AACED049D3}
 	EndGlobalSection
 EndGlobal

@@ -87,10 +87,10 @@ namespace WebPortal.Controllers
             return Create();
         }
 
-        public ActionResult Index()
-        {
-            return View();
-        }
+        //public ActionResult Index()
+        //{
+        //    //return View();
+        //}
 
         [HttpGet]
         public ActionResult Open(string id, string q, int pg = 1, int ps = 12)

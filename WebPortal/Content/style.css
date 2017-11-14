@@ -1,0 +1,55 @@
+﻿body {
+    font-family: 'Love Ya Like A Sister', cursive;
+    background: #fff;
+}
+
+.wrap {
+    margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
+    clear: both;
+}
+
+.logo {
+    text-align: center;
+    margin-top: 200px;
+}
+
+
+
+    .logo p {
+        color: #272727;
+        font-size: 30px;
+        margin-top: 1px;
+    }
+
+
+.sub a {
+    color: #fff;
+    background: #D86827;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-family: arial, serif;
+    font-weight: bold;
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    -border-radius: .5em;
+}
+
+.footer {
+    color: black;
+    position: relative;
+    width: 100%;
+    text-align: right;
+    clear: both;
+}
+
+.logo h1 {
+    color: #D86827;
+    font-family: 'Fugaz One', cursive;
+    font-size: 150px;
+    margin: 10px 0;
+    -ms-text-shadow: 2px 2px 2px #000000;
+    text-shadow: 2px 2px 2px #000000;
+}

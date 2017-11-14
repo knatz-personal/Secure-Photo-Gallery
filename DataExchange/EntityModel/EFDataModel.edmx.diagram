@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a6e9f829f5e043a3871b16370e3c7d57" Name="Diagram1">
+        <EntityTypeShape EntityType="SSDMaltaModel.C__MigrationHistory" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SSDMaltaModel.Album" Width="1.5" PointX="5.25" PointY="6.75" />
+        <EntityTypeShape EntityType="SSDMaltaModel.AspNetRole" Width="1.5" PointX="0.75" PointY="1.125" />
+        <EntityTypeShape EntityType="SSDMaltaModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="1.25" />
+        <EntityTypeShape EntityType="SSDMaltaModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="4" />
+        <EntityTypeShape EntityType="SSDMaltaModel.AspNetUser" Width="1.5" PointX="3" PointY="2.375" />
+        <EntityTypeShape EntityType="SSDMaltaModel.ErrorLog" Width="1.5" PointX="7.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SSDMaltaModel.EventLog" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SSDMaltaModel.Gender" Width="1.5" PointX="0.75" PointY="7.5" />
+        <EntityTypeShape EntityType="SSDMaltaModel.Image" Width="1.5" PointX="7.5" PointY="6.5" />
+        <EntityTypeShape EntityType="SSDMaltaModel.Menu" Width="1.5" PointX="1.5" PointY="10" />
+        <EntityTypeShape EntityType="SSDMaltaModel.Town" Width="1.5" PointX="0.75" PointY="4.5" />
+        <AssociationConnector Association="SSDMaltaModel.FK_Album_Images" />
+        <AssociationConnector Association="SSDMaltaModel.FK_AspNetUser_Albums" />
+        <AssociationConnector Association="SSDMaltaModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="SSDMaltaModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="SSDMaltaModel.FK_Users_Genders" />
+        <AssociationConnector Association="SSDMaltaModel.FK_Users_Towns" />
+        <AssociationConnector Association="SSDMaltaModel.FK_Menus_Menus" />
+        <AssociationConnector Association="SSDMaltaModel.AspNetUserRoles" />
+        <AssociationConnector Association="SSDMaltaModel.MenuRoles" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

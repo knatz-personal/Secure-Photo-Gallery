@@ -1,0 +1,100 @@
+﻿@model PagedList.IPagedList<WebPortal.Models.GalleryModel>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "Gallery";
+}
+<br />
+@if (Model.Any())
+{
+    <div class="row">
+        @using (Html.BeginForm("Index", "Gallery", FormMethod.Get, new { id = "listform", @class = "col-md-4" }))
+        {
+            <div class="input-group">
+                <input id="query" type="text" placeholder="Search" name="q" class="form-control input-sm">
+                <span class="input-group-btn">
+                    <button id="Search" class="btn btn-primary btn-sm" type="submit">
+                        <i class="glyphicon glyphicon-search"></i>
+                        Search
+                    </button>
+                </span>
+            </div>
+        }
+    </div><hr />
+
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="page-header">Gallery</h1>
+        </div>
+        <div class="panel row">
+            @Html.PagedListPager(Model, pg => Url.Action("Index", "Gallery",
+                new { q = Request.QueryString["q"], pg, ps = 12 }),
+                PagedListRenderOptions.TwitterBootstrapPagerAligned
+                )
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="@Url.Action("Open", "Album", new {id=item.Album.ID})">
+                        @if (item.Image == null)
+                    {
+                            <img class="img-responsive" width="400" height="300" src="~/Content/images/album.jpg" alt="album cover">
+                        }
+                        else
+                        {
+                            <img class="img-responsive" width="400" height="300" src="@item.Image.ThumbNail" alt="@item.Image.Description" title="@item.Image.Title">
+                        }
+
+                        <div class="text-right" style="display: block; min-height: 100px; height: 100px; overflow: hidden;">
+                            <div class="caption">
+                                <small class="text-muted">@item.Album.Title</small>
+                                <p>@item.Album.Description</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            }
+        </div>
+        <div class="row">
+            <div class="panel ">
+                @Html.PagedListPager(Model, pg => Url.Action("Index", "Gallery",
+                    new { q = Request.QueryString["q"], pg, ps = 12 }),
+                        PagedListRenderOptions.TwitterBootstrapPagerAligned
+                        )
+            </div>
+        </div>
+    </div>
+
+}
+else
+{
+    <br />
+    <div class="row">
+        <div class="alert alert-success" role="alert">
+            <p>No Albums found!</p>
+        </div>
+    </div>
+}
+
+<div class="row">
+
+    <div class="panel panel-default col-lg-5">
+        @{
+            Html.RenderAction("Upload", "Image");
+        }
+    </div>
+
+    <div class="panel panel-default col-lg-6 pull-right">
+        @{
+            Html.RenderAction("Create", "Album");
+        }
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Content/bootstrap-filestyle/bootstrap-filestyle.min.js"></script>
+
+}

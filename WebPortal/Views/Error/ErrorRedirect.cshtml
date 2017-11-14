@@ -1,0 +1,73 @@
+﻿@model WebPortal.Models.ErrorModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>@Model.Code</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href='http://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister' rel='stylesheet' type='text/css'>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <!--FAVICON-->
+    <link rel="icon" href="/img/skeleton/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/img/skeleton/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+        <div id="block_error" class="row jumbotron">
+            <div class="logo">
+                @if (Model.Code == "400")
+                {
+                    <h1>Error: 400</h1>
+                    <p>An error has occurred: The request was malformed! Error 400 Bad Request, Sorry for the inconvenience.</p>
+                }
+                else if (Model.Code == "401")
+                {
+                    <h1>Error: 401</h1>
+                    <p>An error has occurred: Unauthorized! Error 401, Sorry for the inconvenience.</p>
+                }
+                else if (Model.Code == "403")
+                {
+                    <h1>Error: 403</h1>
+                    <p>An error has occurred: No Access or it is Forbidden!  Error 403, Sorry for the inconvenience.</p>
+                }
+                else if (Model.Code == "404")
+                {
+                    <h1>Error: 404</h1>
+                    <p>An error has occurred: Page not found!  Error 404, Sorry for the inconvenience.</p>
+                }
+                else if (Model.Code == "500")
+                {
+                    <h1>Error: 500</h1>
+                    <p>An error has occurred: Internal Error 500!</p>
+                }
+                else if (Model.Code == "503")
+                {
+                    <h1>Error: 503</h1>
+                    <p>An error has occurred: Service Unavailable!  Error 503 ,Sorry for the inconvenience.</p>
+                }
+                else
+                {
+                    <h1>Unknown Error</h1>
+                    <p>An unknown error has occurred: Sorry for the inconvenience.</p>
+                }
+
+                <div class="sub">
+                    <p>
+                        @Html.ActionLink("Home", "Index", "Home")
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            Copyright &copy; @DateTime.Now.Year. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>
